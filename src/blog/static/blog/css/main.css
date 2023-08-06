@@ -1,3 +1,8 @@
-div {
-    color: brown;
+@font-face {
+    font-family: 'Lobster-Regular';
+    src: url('../fonts/Lobster-Regular.ttf') format('truetype') local('Lobster-Regular');
+}
+
+body{
+    font-family: 'Lobster-Regular', sans-serif;
 }
