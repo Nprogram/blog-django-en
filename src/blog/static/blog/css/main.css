@@ -3,6 +3,11 @@
     src: url('../fonts/Lobster-Regular.ttf') format('truetype') local('Lobster-Regular');
 }
 
+/* html, body {
+    direction: rtl;
+    text-align: right;
+} */
+
 body{
     font-family: 'Lobster-Regular', sans-serif;
 }
