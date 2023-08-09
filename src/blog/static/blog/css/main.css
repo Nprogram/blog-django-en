@@ -29,7 +29,7 @@ body{
 {
     padding: 0 15px;
 }
-.latest-post .lates-post-item, .latest-comment .latest-comment-item{
+.latest-post .latest-post-item, .latest-comment .latest-comment-item{
     padding: 6px;
 }
 .latest-post li:first-child, .latest-comment li:first-child{
