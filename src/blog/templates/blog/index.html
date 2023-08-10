@@ -1,5 +1,17 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+<!-- {% if massages %}
+   {% for massage in massages %}
+     <div class="alert alert-{{massages.tags}}" id="msg" role="alert">
+         {{massage}}
+     </div>
+   {% endfor %}
+{% endif %} -->
+{% if messages %}
+        {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+{% endif %}
 <h6>
     Bienvenue sur notre blog sur le développement web « Premier pas » !<br>
     

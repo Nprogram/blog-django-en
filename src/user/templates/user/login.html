@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+<div class="border p-4 mb-5 mt-4 ">
+  <h3 class=" text-center ">S'identifier<br></h3>
+      <form method ="POST">
+    {% csrf_token%}
+
+    <!-- {{comment_form.as_p}} asparagraphe-->
+    {{form|crispy}}
+    <input class="btn btn-secondary mt-4" type="submit" value="Connexion">
+
+  </form>
+  <div class="border-top mt-4 pt-2">
+    <small>Si vous avez oublier votre nom d'utilisateur ou mot de passe <a href="">Clickez ic</a></small>
+    <small>Si vous avez déjà un compte, identifiez-vous <a href="{% url 'login' %}">Vous avez déjà un compte ?</a></small>
+
+  </div>
+
+</div>
+
+
+{% endblock content %}
+
+
+
+
+
+                
