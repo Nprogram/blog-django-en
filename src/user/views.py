@@ -24,7 +24,7 @@ def register(request):
 
 def login_user(request):
     if request.method == 'POST':
-        form = LoginForm
+        # form = LoginForm
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username = username, password=password)
@@ -35,16 +35,16 @@ def login_user(request):
         else:
             messages.warning(request, "Nom d'utilisateur incorrect!")
 
-    else:
-        form = LoginForm
+    # else:
+    #     form = LoginForm
 
     return render(request, 'user/login.html', {
         'title' : 'Connexion',
-        'form' : form,
+        # 'form' : form,
     })
 def logout_user(request):
     logout(request)
-    messages.success(request, "Deconnexion réussie à bientot!")
+    # messages.success(request, "Deconnexion réussie à bientot!")
     return render (request, 'user/logout.html',{
         'title' : 'Deconnexion..',
     })
