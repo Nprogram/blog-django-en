@@ -20,9 +20,10 @@
 <body>
     <header><!--Start Navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'blog/images/mim-logo.png' %}" alt="logo Blog", width="30px">
-                Blog</a>
+                Blog
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,28 +34,42 @@
                   <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
                 </li>
                 
-                <li class="nav-item dropdown">
+                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Mes formations
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Formation Django</a>
-                    <a class="dropdown-item" href="#">Formation Python</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Formation html & css</a>
+                     <a class="dropdown-item" href="#">Formation Django</a>
+                     <a class="dropdown-item" href="#">Formation Python</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="#">Formation html & css</a>
                   </div>
-                </li>
-                <li class="nav-item">
+                 </li>
+                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}">About me !</a>
-                  </li>
+                 </li>
               </ul>
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Créer un compte </a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">S'identifier</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Dexonnexion</a></li>
-                </ul>
+              {% if user.is_staff %}
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item"><a class="nav-link text-warning" href="{% url 'profile' %}">Administrateur: Bonjour {{user.username}}</a></li>
+                     <li class="nav-item"><a class="nav-link text-warning" href="{% url 'profile' %}">Tableau de</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Dexonnexion</a></li>
+                  </ul> 
+              {% elif request.user.is_authenticated %}
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item"><a class="nav-link text-warning" href="{% url 'profile' %}">User: Bonjour {{user.username}}</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Nouveau blog</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Dexonnexion</a></li>
+                  </ul>
+              {% else %}
+                   <ul class="navbar-nav mr-auto">
+                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">S'identifier</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Créer un compte </a></li>
+                     <!-- <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Dexonnexion</a></li> -->
+                   </ul>
+              {% endif %}
             </div>           
-          </nav>
+        </nav>
           <!--End Navbar-->
     </header>
     <section>

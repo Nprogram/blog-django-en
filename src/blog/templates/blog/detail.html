@@ -2,7 +2,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <div class = "border p-3 mb-3">
-    <img class="img-fluid rounded-circle border m-2" width="70px" src="https://th.bing.com/th/id/OIP.1ktoyn_URsbedTICCrUVBQAAAA?pid=ImgDet&rs=1" alt="Image du bloggeur">
+    <img class="img-fluid rounded-circle border m-2" width="70px" src="{{post.author.profile.image.url}}" alt="Image du bloggeur">
     <samp class="text-secondary">Publier dans: {{post.post_date | date:'d-m-Y'}}</samp>
     <h3><a class="text-dark" href="">{{post.title}}</a></h3>
     <p>{{post.content}}</p>

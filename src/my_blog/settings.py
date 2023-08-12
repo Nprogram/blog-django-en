@@ -123,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = ''
+#STATIC_ROOT = ''
 
 STATIC_URL = 'static/'
 
@@ -146,4 +146,6 @@ INTERNAL_IPS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'logout'
+#LOGOUT_REDIRECT_URL = 'logout'
+MIDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MIDIA_URL = '/media/'
