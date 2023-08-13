@@ -47,3 +47,9 @@ padding-bottom: 0;
     border: 1px dashed #CCC;
 }
 /* End Comment */
+.btn-editing{
+    float: right;
+}
+.back-btn{
+    float: right;
+}

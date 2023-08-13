@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from blog.models import Post
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
+
 # Create your views here.
 def register(request):
     if request.method =='POST':
@@ -94,3 +96,4 @@ def profile_update(request):
     }
 
     return render(request, 'user/profile_update.html', context)
+

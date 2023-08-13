@@ -52,13 +52,13 @@
               {% if user.is_staff %}
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item"><a class="nav-link text-warning" href="{% url 'profile' %}">Administrateur: Bonjour {{user.username}}</a></li>
-                     <li class="nav-item"><a class="nav-link text-warning" href="{% url 'profile' %}">Tableau de</a></li>
+                     <li class="nav-item"><a class="nav-link text-primary" href="{% url 'new_post' %}">Nouveau blog</a></li>
                      <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Dexonnexion</a></li>
                   </ul> 
               {% elif request.user.is_authenticated %}
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item"><a class="nav-link text-warning" href="{% url 'profile' %}">User: Bonjour {{user.username}}</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Nouveau blog</a></li>
+                     <li class="nav-item"><a class="nav-link text-primary" href="{% url 'new_post' %}">Nouveau blog</a></li>
                      <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Dexonnexion</a></li>
                   </ul>
               {% else %}

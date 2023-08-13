@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+<div class="border p-4 mb-5 mt-4 ">
+  
+    
+  <form method ="POST">
+    <legend class=" border-bottom pb-1 mb-3 ">Supprimer blog</legend>
+    <legend class="pb-1 mb-3 ">Etes vous sur de supprimer "{{object.title}}" ?</legend>
+    {% csrf_token%}
+
+    <!-- {{comment_form.as_p}} asparagraphe-->
+    <!-- {{form|crispy}} -->
+    <input class="btn btn-danger mt-4" type="submit" value="Confirmer">
+    <a class="btn btn-secondary mt-4 back-btn" href="{% url 'detail' object.id %}">Annuler</a>
+
+  </form>
+ </div>
+{% endblock content %}
+
+
+
+
+
+                
